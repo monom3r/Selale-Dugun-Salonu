@@ -1004,8 +1004,12 @@ input[type="radio"]{
     }
 
     .header {
-        background-size: cover;  
-        height: 70vh;  
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center; 
+        -webkit-background-size: cover;
+        height: 70vh;
+        min-height: 470px;  
     }
 
     .galeri {
@@ -1056,8 +1060,10 @@ input[type="radio"]{
 
     .contact-us {
         height: 65vh;
+        min-height: 470px; 
         background-position: center;
         background-size: cover;
+        -webkit-background-size: cover;
     }
 
     .contact-us-form {
