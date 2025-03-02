@@ -1004,12 +1004,16 @@ input[type="radio"]{
     }
 
     .header {
-        background-attachment: fixed;
+        background-attachment: unset;
         background-size: cover;
         background-position: center; 
         -webkit-background-size: cover;
         height: 70vh;
         min-height: 470px;  
+    }
+
+    .header-content h3 {
+        font-size: 70px;
     }
 
     .galeri {
@@ -1060,7 +1064,7 @@ input[type="radio"]{
 
     .contact-us {
         height: 65vh;
-        min-height: 470px; 
+        min-height: 545px; 
         background-position: center;
         background-size: cover;
         -webkit-background-size: cover;
@@ -1094,6 +1098,13 @@ input[type="radio"]{
     .faq {
         font-size: 17px;
         width: 100%;
+    }
+
+    .faq h2 {
+        display: flex;
+        justify-content: center;
+        white-space: nowrap;
+        font-size: 48px;
     }
 
     .faq ul li label {
