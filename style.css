@@ -277,6 +277,7 @@ nav {
     font-size: 18px;
     font-weight: bold;
     transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .alt {
@@ -468,7 +469,7 @@ nav {
     max-width: 500px;
     width: 90%;
     margin: 50px auto;
-    padding: 30px;
+    padding: 20px 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -503,7 +504,7 @@ nav {
 
 .contact-us-form button {
     border: 0;
-    margin: 15px;
+    margin: 10px;
     padding: 12px 20px;
     cursor: pointer;
     background: #d8b46a;
@@ -1077,7 +1078,7 @@ input[type="radio"]{
 
     .contact-us-form {
         max-width: 370px;
-        max-height: 450px;
+        height: auto;
     }
 
     .transportation-content iframe {

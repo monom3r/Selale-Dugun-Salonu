@@ -27,71 +27,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-organizationImg.addEventListener("click", () => {
-    if (organizationInside.style.display === "none") {
-        organizationInside.style.display = "block";
-        musicInside.style.display = "none";
-        cateringInside.style.display = "none";
-        decorationInside.style.display = "none";
-        fotoInside.style.display = "none";
-    } else {
-        organizationInside.style.display = "none";
-    }
-});
+document.addEventListener("DOMContentLoaded", function () {
+    const imageContainers = document.querySelectorAll(".image-container");
+    const serviceSections = document.querySelectorAll(".services > div");
 
-musicImg.addEventListener("click", () => {
-    if (musicInside.style.display === "none") {
-        musicInside.style.display = "block";
-        organizationInside.style.display = "none";
-        cateringInside.style.display = "none";
-        decorationInside.style.display = "none";
-        fotoInside.style.display = "none";
-    } else {
-        musicInside.style.display = "none";
-    }
-});
+    imageContainers.forEach(container => {
+        container.addEventListener("click", function () {
+            const targetId = container.querySelector("img").id.replace("Img", "Inside");
 
-foodImg.addEventListener("click", () => {
-    if (cateringInside.style.display === "none") {
-        cateringInside.style.display = "block";
-        organizationInside.style.display = "none";
-        musicInside.style.display = "none";
-        decorationInside.style.display = "none";
-        fotoInside.style.display = "none";
-    } else {
-        cateringInside.style.display = "none";
-    }
-});
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection && targetSection.style.display === "block") {
+                targetSection.style.display = "none";
+            } else {
+                serviceSections.forEach(section => {
+                    section.style.display = "none";
+                });
 
-decorationImg.addEventListener("click", () => {
-    if (decorationInside.style.display === "none") {
-        decorationInside.style.display = "block";
-        organizationInside.style.display = "none";
-        musicInside.style.display = "none";
-        cateringInside.style.display = "none";
-        fotoInside.style.display = "none";
-    } else {
-        decorationInside.style.display = "none";
-    }
-});
+                if (targetSection) {
+                    targetSection.style.display = "block";
+                }
+            }
+        });
+    });
 
-fotoImg.addEventListener("click", () => {
-    if (fotoInside.style.display === "none") {
-        fotoInside.style.display = "block";
-        organizationInside.style.display = "none";
-        musicInside.style.display = "none";
-        cateringInside.style.display = "none";
-        decorationInside.style.display = "none";
-    } else {
-        fotoInside.style.display = "none";
-    }
+    serviceSections.forEach(section => {
+        section.style.display = "none";
+    });
 });
-
-organizationInside.style.display = "none";
-musicInside.style.display = "none";
-cateringInside.style.display = "none";
-decorationInside.style.display = "none";
-fotoInside.style.display = "none";
 
 document.addEventListener("DOMContentLoaded", function() {
     const filters = document.querySelectorAll(".filter");
@@ -118,13 +81,21 @@ document.addEventListener("DOMContentLoaded", function() {
 const loadMoreBtn = document.getElementById("loadMore");
 const hiddenPhotosDiv = document.getElementById("hiddenPhotos");
 
+let lastScrollPosition = 0;
+
 loadMoreBtn.addEventListener("click", () => {
+    const currentScrollPosition = window.scrollY;
+
     if (hiddenPhotosDiv.classList.contains("show")) {
         hiddenPhotosDiv.classList.remove("show");
         loadMoreBtn.textContent = "Daha Fazla...";
+
+        window.scrollTo(0, lastScrollPosition);
     } else {
         hiddenPhotosDiv.classList.add("show");
         loadMoreBtn.textContent = "Daha Az Göster";
+
+        lastScrollPosition = currentScrollPosition;
     }
 });
 
